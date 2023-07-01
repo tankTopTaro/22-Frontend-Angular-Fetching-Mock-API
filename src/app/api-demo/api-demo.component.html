@@ -1,0 +1,17 @@
+<div *ngFor="let item of mockAPI">
+    <p>{{ item.name }}</p>
+    <p>Operating Days:</p>
+    <ul>
+        <li *ngFor="let day of item.operatingDays">
+            <p>Day: {{ day.day }}</p>
+            <p>Features Enabled: {{ day.featuresEnabled }}</p>
+            <p>Timeslots:</p>
+            <ul>
+                <li *ngFor="let timeslot of day.timeslot">
+                    <p>Time: {{ timeslot.hmsFormat.hours }}:{{ timeslot.hmsFormat.minutes }}</p>
+                    <p>Slots: {{ timeslot.slots }}</p>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
